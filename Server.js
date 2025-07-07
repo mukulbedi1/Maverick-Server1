@@ -23,7 +23,22 @@ app.use('/api/nmf', express.static(path.join(__dirname, "public", "videos")));
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://maverick-client-du3p.vercel.app/"
+];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 // Logging middleware for development
 if (process.env.NODE_ENV === "development") {
