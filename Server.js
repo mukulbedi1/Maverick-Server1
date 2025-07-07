@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://maverick-client-du3p.vercel.app/"
+  "https://maverick-client-ajot.vercel.app"
 ];
 app.use(
   cors({
