@@ -5,10 +5,8 @@
   "main": "Server.js",
   "type": "module",
   "scripts": {
-    "setup-project": "npm i && cd client && npm i",
-    "setup-production-app": "npm i && cd client && npm i && npm run build ",
-    "dev": "nodemon server",
-    "client": "cd client && npm run dev"
+  "start": "node Server.js",
+  "dev": "nodemon Server.js"
   },
   "keywords": [],
   "author": "",
